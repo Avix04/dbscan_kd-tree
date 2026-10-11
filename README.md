@@ -1,6 +1,6 @@
 # Fast2D-DBSCAN
 
-A **high-performance**, **2D-optimized** implementation of the DBSCAN clustering algorithm. By pairing a custom C-based KD-Tree engine with a Python frontend via `ctypes`, this project achieves $O(n \log n)$ complexity and is on pair or outpaces generalized machine learning libraries (like `scikit-learn`) for large-scale, two-dimensional spatial data.
+A **high-performance**, **2D-optimized** implementation of the DBSCAN clustering algorithm. By pairing a custom C-based KD-Tree engine with a Python frontend via `ctypes`, this project achieves $O(n \log n)$ complexity and is on par with or outpaces generalized machine learning libraries (like `scikit-learn`) for large-scale, two-dimensional spatial data.
 
 ## Key Features
 
