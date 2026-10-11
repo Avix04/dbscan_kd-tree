@@ -3,7 +3,7 @@
 
 #include "dbscan.h"
 
-// Don't use pow for performance optimization
+// Doesn't use pow for performance optimization
 // Get the squared distance of two points to then be compared with epsilon squared
 static double get_squared_distance(double x1, double y1, double x2, double y2) {
   double dx = x1 - x2;
@@ -12,6 +12,7 @@ static double get_squared_distance(double x1, double y1, double x2, double y2) {
   return (dx * dx) + (dy * dy);
 }
 
+// Utility swapping function
 static void swap(int* a, int* b) {
     int temp = *a;
     *a = *b;
@@ -65,7 +66,7 @@ static void search_kdtree(Node *node, int target_id, double *x_coords, double *y
   // 0 for left and 1 for right
   int direction;
   
-  // The 1D distance between the target point and the node, if it is less than epsilon we can not search the other branch
+  // The 1D distance between the target point and the node, if it is more than epsilon than we can avoid searching the other branch
   double target_coord = (axis == 0) ? x_coords[target_id] : y_coords[target_id];
   double node_coord = (axis == 0) ? x_coords[node->index] : y_coords[node->index];
   double one_dimensional_distance = target_coord - node_coord;
